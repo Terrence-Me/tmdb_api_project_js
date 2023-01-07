@@ -199,7 +199,7 @@ section {
   left: 0;
   width: 100%;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   flex-wrap: wrap;
   align-items: flex-start;
   align-content: flex-start;
@@ -208,10 +208,10 @@ section {
 .column_content {
   min-height: 0;
   height: auto;
-  width: 100%;
-  max-width: var(--maxPrimaryPageWidth);
+  /* width: 100%; */
+  max-width: 1400px;
   min-height: 355px;
-  overflow-x: scroll;
+  /* overflow-x: scroll; */
   overflow-y: hidden;
   transition: height 0.5s linear;
   display: flex;

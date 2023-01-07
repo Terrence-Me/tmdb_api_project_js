@@ -49,6 +49,11 @@
   width: 100%;
   height: 100%;
 }
+.image img {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
 
 .card-options {
   position: absolute;
@@ -65,8 +70,9 @@
 }
 
 .glyophicon {
+  background-image: url('/assets/images/glyophicon_circle_4.jpg');
+  border-radius: 50%;
   font-size: 1.6em;
-  background-image: url('/assets/images/glyophicon_circle_2.jpg');
   position: relative;
   top: 0;
   left: 0;
