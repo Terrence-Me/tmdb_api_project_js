@@ -1,15 +1,18 @@
 const media = document.getElementById('media');
 const sumbitBtn = document.getElementById('submitbtn');
 
+const posterBaseUrl = 'https://www.themoviedb.org/t/p/w220_and_h330_face';
+const movieIdBaseUrl = 'https://www.themoviedb.org/movie/';
+
 const submitBtnHandler = (event) => {
   event.preventDefault();
   console.log(event);
   console.log(event.target.form[1].value.trim());
+  let userInput = event.target.form[1].value.trim();
+  localStorage.setItem('currentSearch', JSON.stringify(userInput));
+  //   fetchMovieSearch(userInput);
+  location.href = 'results.html';
 };
-sumbitBtn.addEventListener('click', submitBtnHandler);
-
-const posterBaseUrl = 'https://www.themoviedb.org/t/p/w220_and_h330_face';
-const movieIdBaseUrl = 'https://www.themoviedb.org/movie/';
 
 const popularUrl =
   'https://api.themoviedb.org/3/movie/popular?api_key=6e33035fa0621772e26e7510c45c539e&language=en-US&page=1';
@@ -21,8 +24,19 @@ const fetchPopular = async () => {
   buildPopularCards(data);
 };
 
+// const searchMovieBaseUrl = 'https://www.themoviedb.org/movie/';
+
+// const fetchMovieSearch = async (userInput) => {
+//   let searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=6e33035fa0621772e26e7510c45c539e&language=en-US&query=${userInput}&page=1&include_adult=false`;
+//   // console.log(searchUrl);
+
+//   let response = await fetchMovieSearch(searchUrl);
+//   let data = await response.json();
+//   console.log(data);
+//   //   buildSearchCard(data);
+// };
+
 const buildPopularCards = (data) => {
-  console.log(data);
   media.innerHTML = data.results
     .map((movie, index) => {
       return `<div class="column_content">
@@ -65,5 +79,7 @@ const buildPopularCards = (data) => {
     })
     .join(' ');
 };
+
+sumbitBtn.addEventListener('click', submitBtnHandler);
 
 fetchPopular();
