@@ -11,7 +11,7 @@ const submitBtnHandler = (event) => {
   let userInput = event.target.form[1].value.trim();
   localStorage.setItem('currentSearch', JSON.stringify(userInput));
   //   fetchMovieSearch(userInput);
-  location.href = 'results.html';
+  //   location.href = 'results.html';
 };
 
 const popularUrl =

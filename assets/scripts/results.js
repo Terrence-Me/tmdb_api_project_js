@@ -6,22 +6,22 @@ const searchMovieBaseUrl = 'https://www.themoviedb.org/movie/';
 
 let currentSearch;
 
-if (localStorage.getItem('currentSearch')) {
-  currentSearch = JSON.parse(localStorage.getItem('currentSearch'));
-}
-
 const fetchMovieSearch = async (currentSearch) => {
   let searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=6e33035fa0621772e26e7510c45c539e&language=en-US&query=${currentSearch}&page=1&include_adult=false`;
   console.log(searchUrl);
 
-  let response = await fetchMovieSearch(searchUrl);
+  let response = await fetch(searchUrl);
   let data = await response.json();
   console.log(data);
   buildSearchCard(data);
 };
 
+if (localStorage.getItem('currentSearch')) {
+  currentSearch = JSON.parse(localStorage.getItem('currentSearch'));
+  fetchMovieSearch(currentSearch);
+}
+
 const buildSearchCard = (data) => {
-  console.log(data);
   resultsCard.innerHTML = data.results
     .map((movie, index) => {
       return `<div class="card_movie">
@@ -59,4 +59,5 @@ const buildSearchCard = (data) => {
     .join(' ');
 };
 
-window.onload = fetchMovieSearch();
+// fetchMovieSearch();
+// window.onload = fetchMovieSearch();
