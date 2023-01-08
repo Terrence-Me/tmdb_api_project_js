@@ -5,4 +5,20 @@ body * {
 body {
   margin: 0;
   font-family: 'Source Sans Pro', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  height: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  background-color: rgba(3, 37, 65, 1);
+  color: #000;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+}
+
+body,
+ul {
+  margin: 0;
+  padding: 0;
 }
