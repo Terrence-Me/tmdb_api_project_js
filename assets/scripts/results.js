@@ -1,4 +1,5 @@
 const resultsCard = document.getElementById('card-results');
+const homeBtn = document.getElementById('homebutton');
 
 const searchPosterBaseUrl =
   'https://www.themoviedb.org/t/p/w94_and_h141_bestv2';
@@ -11,6 +12,11 @@ const fetchMovieSearch = async (currentSearch) => {
 
   let response = await fetch(searchUrl);
   let data = await response.json();
+  console.log(data.results.length);
+  if (data.results.length === 0) {
+    console.log('nothing');
+    errorHtml();
+  }
   buildSearchCard(data);
 };
 
@@ -18,6 +24,12 @@ if (localStorage.getItem('currentSearch')) {
   currentSearch = JSON.parse(localStorage.getItem('currentSearch'));
   fetchMovieSearch(currentSearch);
 }
+
+const errorHtml = () => {
+  resultsCard.innerHTML = `<div><p> Sorry, looks like we're unable to find anything that matches your search. Please click below button to try again </p>
+        <button id='homebutton'> Home Page </button>
+    </div>`;
+};
 
 const buildSearchCard = (data) => {
   resultsCard.innerHTML = data.results

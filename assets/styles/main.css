@@ -14,12 +14,6 @@ section {
 }
 
 .section-top {
-  /* background-image: linear-gradient(
-        to right,
-        rgb(3, 37, 65, 0.8) 0%,
-        rgb (3, 37, 65, 0) 100%
-      ),
-      url('../images/TMDB_section_image.jpg'); */
   background-image: url('../images/TMDB_section_image.jpg');
   min-height: 300px;
   height: calc(100vh / 2.5);
@@ -115,6 +109,13 @@ section {
 .section_search form label input:focus {
   background-color: rgb(231, 235, 245);
   outline: none;
+}
+
+.input_error p {
+  text-align: center;
+  font-weight: 900;
+  color: rgb(243, 181, 181);
+  margin-bottom: 0;
 }
 
 .section_search_input {

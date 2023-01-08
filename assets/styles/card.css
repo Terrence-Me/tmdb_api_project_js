@@ -141,16 +141,14 @@
 .icon {
   padding-top: 1px;
   padding-left: 1px;
-  font-size: 0.6em;
+  font-size: 0.8em;
   color: #fff;
   font-family: 'Consensus' !important;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 700;
   font-variant: normal;
   text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  line-height: 1;+
 }
 
 .card-content h2 {
