@@ -8,11 +8,9 @@ let currentSearch;
 
 const fetchMovieSearch = async (currentSearch) => {
   let searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=6e33035fa0621772e26e7510c45c539e&language=en-US&query=${currentSearch}&page=1&include_adult=false`;
-  console.log(searchUrl);
 
   let response = await fetch(searchUrl);
   let data = await response.json();
-  console.log(data);
   buildSearchCard(data);
 };
 
