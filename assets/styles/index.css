@@ -10,7 +10,7 @@ body {
   min-height: 100%;
   height: auto;
   -ms-overflow-style: -ms-autohiding-scrollbar;
-  background-color: rgba(3, 37, 65, 1);
+  /* background-color: rgba(3, 37, 65, 1); */
   color: #000;
   font-family: 'Source Sans Pro', Arial, sans-serif;
   font-size: 1em;
