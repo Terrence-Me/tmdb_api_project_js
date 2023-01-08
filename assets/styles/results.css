@@ -181,3 +181,22 @@
   overflow: hidden;
   margin: 0;
 }
+
+.error_msg {
+  text-align: center;
+  font-weight: 700;
+}
+
+.error_msg button {
+  color: #fff;
+  background: linear-gradient(
+    to right,
+    rgba(30, 213, 169, 1) 0%,
+    rgba(1, 180, 228, 1) 100%
+  );
+  height: 46px;
+  border: none;
+  padding: 10px 26px;
+  border-radius: 30px;
+  font-weight: 700;
+}
