@@ -20,11 +20,21 @@ const submitBtnHandler = (event) => {
 };
 
 const fetchPopular = async () => {
-  let response = await fetch(popularUrl);
-  let data = await response.json();
-
-  buildPopularCards(data);
+  try {
+    let response = await axios.get(popularUrl);
+    console.log(response.data);
+    let data = response.data;
+    buildPopularCards(data);
+  } catch (error) {
+    alert(error.message);
+  }
 };
+// const fetchPopular = async () => {
+//   let response = await fetch(popularUrl);
+//   let data = await response.json();
+
+//   buildPopularCards(data);
+// };
 
 const renderErrorMsg = () => {
   errorInputMsg.innerHTML = ' <p>Please Enter a Keyword In The Search Bar </p>';
