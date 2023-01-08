@@ -1,4 +1,12 @@
 const media = document.getElementById('media');
+const sumbitBtn = document.getElementById('submitbtn');
+
+const submitBtnHandler = (event) => {
+  event.preventDefault();
+  console.log(event);
+  console.log(event.target.form[1].value.trim());
+};
+sumbitBtn.addEventListener('click', submitBtnHandler);
 
 const posterBaseUrl = 'https://www.themoviedb.org/t/p/w220_and_h330_face';
 const movieIdBaseUrl = 'https://www.themoviedb.org/movie/';

@@ -112,6 +112,11 @@ section {
   padding: 10px 20px;
 }
 
+.section_search form label input:focus {
+  background-color: rgb(231, 235, 245);
+  outline: none;
+}
+
 .section_search_input {
   display: inline-flex;
   justify-content: center;
