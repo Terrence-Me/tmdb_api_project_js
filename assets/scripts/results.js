@@ -1,3 +1,4 @@
+import { fetchApi } from './fetch.js';
 const resultsCard = document.getElementById('card-results');
 const homeBtn = document.getElementById('homebutton');
 
@@ -14,18 +15,16 @@ const homeBtnHandler = (event) => {
     return;
   }
 };
-resultsCard.addEventListener('click', homeBtnHandler);
 
-const fetchMovieSearch = async (currentSearch) => {
-  let searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=6e33035fa0621772e26e7510c45c539e&language=en-US&query=${currentSearch}&page=1&include_adult=false`;
+if (resultsCard) {
+  resultsCard.addEventListener('click', homeBtnHandler);
+}
 
-  try {
-    let response = await axios.get(searchUrl);
-    let data = response.data;
-    buildSearchCard(data);
-  } catch (error) {
-    alert(error.message);
-  }
+export const fetchMovieSearch = async (currentSearch) => {
+  let data = await fetchApi(
+    `https://api.themoviedb.org/3/search/movie?api_key=6e33035fa0621772e26e7510c45c539e&language=en-US&query=${currentSearch}&page=1&include_adult=false`
+  );
+  buildSearchCard(data);
 };
 
 if (localStorage.getItem('currentSearch')) {
@@ -34,7 +33,6 @@ if (localStorage.getItem('currentSearch')) {
 }
 
 const buildSearchCard = (data) => {
-  console.log(data);
   data.results.length > 0
     ? (resultsCard.innerHTML = data.results
         .map((movie, index) => {

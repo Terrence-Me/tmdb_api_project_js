@@ -1,3 +1,5 @@
+import { fetchApi } from './fetch.js';
+
 const media = document.getElementById('media');
 const sumbitBtn = document.getElementById('submitbtn');
 const errorInputMsg = document.getElementById('errorinput');
@@ -20,13 +22,8 @@ const submitBtnHandler = (event) => {
 };
 
 const fetchPopular = async () => {
-  try {
-    let response = await axios.get(popularUrl);
-    let data = response.data;
-    buildPopularCards(data);
-  } catch (error) {
-    alert(error.message);
-  }
+  let data = await fetchApi(popularUrl);
+  buildPopularCards(data);
 };
 
 const renderErrorMsg = () => {
