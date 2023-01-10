@@ -1,6 +1,5 @@
 import { fetchApi } from './fetch.js';
 const resultsCard = document.getElementById('card-results');
-const homeBtn = document.getElementById('homebutton');
 
 const searchPosterBaseUrl =
   'https://www.themoviedb.org/t/p/w94_and_h141_bestv2';
