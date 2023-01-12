@@ -1,5 +1,7 @@
 # TMDB API project
 
+## view deployed app [here](https://terrence-me.github.io/tmdb_api_project_js/)
+
 This is a rendition of the TMDB website with minimal interactivity
 
 - Homepage loads with list of popular movies
