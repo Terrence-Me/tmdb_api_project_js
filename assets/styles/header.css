@@ -29,7 +29,7 @@ header {
   position: relative;
   top: 0;
   left: 0;
-  max-width: var(--maxPrimaryPageWidth);
+  max-width: 1400px;
   width: 100%;
   padding: 0 40px;
 }
@@ -69,7 +69,6 @@ header {
   position: relative;
   white-space: nowrap;
   cursor: pointer;
-  /* align-items: center; */
 }
 
 .header-content_info_bar {

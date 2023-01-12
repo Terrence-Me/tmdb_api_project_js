@@ -13,15 +13,12 @@
   align-items: flex-start;
   width: 100%;
   justify-content: center;
-  align-content: flex-start;
 }
 
 .content_wrapper {
   max-width: 1400px;
-  width: 100%;
   display: flex;
   align-items: flex-start;
-  align-content: flex-start;
   padding-left: 40px;
   padding-right: 40px;
   padding-top: 30px;
@@ -56,13 +53,9 @@
   padding-bottom: 0;
 }
 
-.search_results {
-}
-
 .results {
   align-items: flex-start;
   align-content: flex-start;
-  justify-content: flex-start;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -151,6 +144,8 @@
 
 .movie_details .title a {
   display: inline-block;
+  text-decoration: none;
+  color: #000;
 }
 
 .release_date {
@@ -161,7 +156,6 @@
 .movie_details .title h2 {
   font-size: 1.2em;
   line-height: 1.2em;
-  margin-bottom: 0;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
@@ -171,8 +165,8 @@
 }
 
 .movie_overview {
-  height: auto;
   margin-top: 20px;
+  width: 100%;
 }
 
 .movie_overview p {
@@ -183,6 +177,7 @@
   text-overflow: ellipsis;
   overflow: hidden;
   margin: 0;
+  height: 36px;
 }
 
 .error_msg {
